@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfApp4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="400">
+    <Window.DataContext>
+        <local:ViewModel></local:ViewModel>
+    </Window.DataContext>
+    <Grid Margin="0,0,2,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Content="{Binding Area[0], UpdateSourceTrigger=PropertyChanged}" CommandParameter="0" Command="{Binding ButtonClick}" Background="White"></Button>
+        <Button Content="{Binding Area[5], UpdateSourceTrigger=PropertyChanged}" CommandParameter="5" Command="{Binding ButtonClick}" Background="White" Grid.Column="2" Grid.Row="1"></Button>
+        <Button Content="{Binding Area[8], UpdateSourceTrigger=PropertyChanged}" CommandParameter="8" Command="{Binding ButtonClick}" Background="White" Grid.Column="2" Grid.Row="2"></Button>
+        <Button Content="{Binding Area[7], UpdateSourceTrigger=PropertyChanged}" CommandParameter="7" Command="{Binding ButtonClick}" Background="White" Grid.Column="1" Grid.Row="2"></Button>
+        <Button Content="{Binding Area[2], UpdateSourceTrigger=PropertyChanged}" CommandParameter="2" Command="{Binding ButtonClick}" Background="White" Grid.Column="2"></Button>
+        <Button Content="{Binding Area[4], UpdateSourceTrigger=PropertyChanged}" CommandParameter="4" Command="{Binding ButtonClick}" Background="White" Grid.Column="1" Grid.Row="1" ></Button>
+        <Button Content="{Binding Area[6], UpdateSourceTrigger=PropertyChanged}" CommandParameter="6" Command="{Binding ButtonClick}" Background="White" Grid.Row="2"></Button>
+        <Button Content="{Binding Area[3], UpdateSourceTrigger=PropertyChanged}" CommandParameter="3" Command="{Binding ButtonClick}" Background="White" Grid.Row="1"></Button>
+        <Button Content="{Binding Area[1], UpdateSourceTrigger=PropertyChanged}" CommandParameter="1" Command="{Binding ButtonClick}" Background="White" Grid.Column="1"></Button>
+        <Button Command="{Binding NewGameClick}" Grid.Row="3" Background="#FF5D5D5D" Foreground="White" Grid.ColumnSpan="3" Margin="4">New Game</Button>
+    </Grid>
+</Window>
